@@ -12,11 +12,10 @@ const login = async (req, res) => {
             // If authentication failed, return the error message
             return res.status(401).json(formatResponse(false, authResult.error, {}));
         }
-
         // If authentication succeeded, return tokens
         res.json(formatResponse(true, 'Login Successfully', authResult));
     } catch (error) {
-        res.status(500).json(formatResponse(false, 'Internal server error', {}));
+        res.status(500).json(formatResponse(false, 'Internal server error. '+ error, {}));
     }
 };
 

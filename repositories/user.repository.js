@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, UserType } = require('../models');
 const bcrypt = require('bcryptjs');
 const { generateAccessToken, generateRefreshToken } = require('../services/auth.service');
 
@@ -20,7 +20,10 @@ const findByCode = async (code) => {
 
 const authenticate = async (code, password) => {
     try {
-        const user = await User.findOne({ where: { code: code }});
+        const user = await User.findOne({
+            where: { code: code },
+            include: [{ model: UserType, as: 'userType' }]
+        });
         if (!user) {
             return { error: 'User not found' };
         }
