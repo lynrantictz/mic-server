@@ -1,17 +1,23 @@
+require('dotenv').config()
 const jwt = require('jsonwebtoken');
 const secretKey = process.env.TOKEN_SECRET;
 
-// Middleware to verify JWT access token
 const auth = (req, res, next) => {
-  const accessToken = req.headers['authorization'];
+  const authorizationHeader = req.headers['authorization'];
 
-  if (!accessToken) {
-    return res.status(401).json({ message: 'Unauthorized: No access token provided' });
+  if (!authorizationHeader) {
+    return res.status(401).json(formatErrorResponse('Unauthorized: No access token provided'));
   }
 
-  jwt.verify(accessToken, secretKey, (err, decoded) => {
+  const token = authorizationHeader.split(' ')[1]; // Split and take the token part
+  if (!token) {
+    return res.status(401).json(formatErrorResponse('Unauthorized: Invalid access token format'));
+  }
+
+  jwt.verify(token, secretKey, (err, decoded) => {
     if (err) {
-      return res.status(401).json({ message: 'Unauthorized: Invalid access token' });
+      console.error('Token verification error:', err.message);
+      return res.status(401).json( formatErrorResponse('Unauthorized: Invalid access token'));
     }
 
     req.user = decoded;
