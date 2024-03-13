@@ -1,8 +1,15 @@
-GET http://localhost:3000/api/v1/login
+POST http://localhost:3000/api/v1/login
 content-type: application/json
-
 {
-    "code": "sample",
-    "password": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "code": "HTG-1",
+    "password": "123"
 }
 ###
+
+# POST http://localhost:3000/api/v1/logout
+# content-type: application/json
+# Authorization: 'Bearer '
+# {
+#     "code": "HTG-1",
+#     "password": "123"
+# }
