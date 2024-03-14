@@ -2,7 +2,7 @@ POST http://localhost:3000/api/v1/login
 Content-Type: application/json
 
 {
-    "codes": "HTG-1",
+    "code": "HTG-1",
     "password": "123"
 }
 ###
