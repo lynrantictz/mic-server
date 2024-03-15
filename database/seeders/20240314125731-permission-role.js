@@ -6,11 +6,11 @@ module.exports = {
 
      await queryInterface.bulkInsert('PermissionRoles', [
        {
-         id: 1,
-         permissionId: 1,
-         roleId: 1,
-         createdAt: new Date(),
-         updatedAt: new Date()
+        id: 1,
+        permissionId: 1,
+        roleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
        },
        {
         id: 2,
