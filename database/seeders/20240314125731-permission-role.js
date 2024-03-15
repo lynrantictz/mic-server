@@ -3,23 +3,107 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+
+     await queryInterface.bulkInsert('PermissionRoles', [
+       {
+         id: 1,
+         permissionId: 1,
+         roleId: 1,
+         createdAt: new Date(),
+         updatedAt: new Date()
+       },
+       {
+        id: 2,
+        permissionId: 2,
+        roleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 3,
+        permissionId: 3,
+        roleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 4,
+        permissionId: 4,
+        roleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 5,
+        permissionId: 5,
+        roleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 6,
+        permissionId: 5,
+        roleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 7,
+        permissionId: 6,
+        roleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 8,
+        permissionId: 5,
+        roleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 9,
+        permissionId: 7,
+        roleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 10,
+        permissionId: 2,
+        roleId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 11,
+        permissionId: 5,
+        roleId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 12,
+        permissionId: 8,
+        roleId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 12,
+        permissionId: 9,
+        roleId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+
+
+     ], {});
+
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('PermissionRoles', null, {});
   }
 };

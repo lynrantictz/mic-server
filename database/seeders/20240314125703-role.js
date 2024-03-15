@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         id: 3,
-        userTypeId: 1,
+        userTypeId: null,
         name: 'Finance',
         description: 'Manages financial aspects within the system, including budgeting, accounting, and financial reporting. Finance users have access to financial data and reports, enabling them to track expenses, analyze financial trends, and ensure fiscal responsibility in claims management.',
         createdAt: new Date(),
