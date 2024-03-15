@@ -96,6 +96,34 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 13,
+        permissionId: 5,
+        roleId: 5,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 14,
+        permissionId: 10,
+        roleId: 5,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 15,
+        permissionId: 11,
+        roleId: 5,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 16,
+        permissionId: 12,
+        roleId: 5,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       
 
 

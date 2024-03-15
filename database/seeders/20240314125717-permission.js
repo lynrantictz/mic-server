@@ -77,6 +77,30 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 10,
+        name: 'initiate_claim',
+        title: 'Initiate claim form',
+        description: 'Initiate medical claim form on behalf of patients.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 11,
+        name: 'edit_claim',
+        title: 'Edit claim form',
+        description: 'Edit medical claims initiated by the user.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 12,
+        name: 'delete_claim',
+        title: 'Delete claim form',
+        description: 'Delete medical claims initiated by the user.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       
      ], {});
 
