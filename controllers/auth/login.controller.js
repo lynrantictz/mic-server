@@ -10,7 +10,11 @@ const login = async (req, res) => {
         }
         res.json(formatResponse(true, 'Login Successfully', authResult));
     } catch (error) {
-        res.status(500).json(formatErrorResponse('Internal server error', error));
+
+        const errorMessage = 'Internal server error';
+        const fullErrorMessage = `${errorMessage}: ${error.message}`;
+        console.error(fullErrorMessage);
+        res.status(500).json(formatErrorResponse(errorMessage, fullErrorMessage));
     }
 };
 
