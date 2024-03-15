@@ -70,7 +70,7 @@ module.exports = {
       {
         id: 8,
         userTypeId: 1,
-        name: 'Card Administrator',
+        name: 'Card Manager',
         description: 'Manages membership cards for members within the insurer organization. This role involves creating new membership cards, updating card details, and deactivating cards as needed.',
         createdAt: new Date(),
         updatedAt: new Date()

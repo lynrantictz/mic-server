@@ -48,7 +48,7 @@ module.exports = {
       {
         id: 6,
         name: 'approve_claim',
-        title: 'View Claims',
+        title: 'Approve Claims',
         description: 'Ability to approve medical claims.',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -101,32 +101,103 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-
-
       {
         id: 13,
-        name: 'create_procedures',
-        title: 'Edit claim form',
-        description: 'Edit medical claims initiated by the user.',
+        name: 'write_procedures',
+        title: 'Write procedures',
+        description: 'Write and edit procedures to claim form.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 14,
-        name: 'create_dosage',
-        title: 'Delete claim form',
-        description: 'Delete medical claims initiated by the user.',
+        name: 'write_dosage',
+        title: 'Write dosage',
+        description: 'Write and edit dosage to claim form.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 15,
+        name: 'write_lab_investigations',
+        title: 'Write lab investigation',
+        description: 'Write and edit laboratory investigation to claim form.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 16,
+        name: 'populate_claim',
+        title: 'Polupate claim',
+        description: 'Write and edit and update claim form.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 17,
+        name: 'add_member',
+        title: 'Write dosage',
+        description: 'Ability to add new members to the system.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 18,
+        name: 'update_member',
+        title: 'Write dosage',
+        description: 'Ability to update members to the system.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 19,
+        name: 'activate_member',
+        title: 'Write lab investigation',
+        description: 'Ability to eactivate existing members.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 20,
+        name: 'deactivate_member',
+        title: 'Polupate claim',
+        description: 'Ability to deactivate (suspend or disable) existing members.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 21,
+        name: 'delete_member',
+        title: 'Polupate claim',
+        description: 'Ability to permanently delete members from the system.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
 
-
-
-      // claim_laboratory_investigations
-      // consultation_fees
-      // claim_dosages
-      // procedures
-
+      {
+        id: 22,
+        name: 'create_card',
+        title: 'Create Card',
+        description: 'Ability to cards.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 23,
+        name: 'update_card',
+        title: 'Update card',
+        description: 'Ability to update cards.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 24,
+        name: 'delete_card',
+        title: 'Delete card',
+        description: 'Ability to delete cards.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       
      ], {});
 
