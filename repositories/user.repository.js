@@ -53,20 +53,24 @@ const findByCode = async (code) => {
     }
 };
 
+/**
+ * User Authentication
+ * @param {*} code 
+ * @param {*} password 
+ * @returns 
+ */
 const authenticate = async (code, password) => {
     try {
-        const userCheck = await User.findOne({
-            where: { code: code },
-        });
+        const userCheck = await findByCode(code)
         
-        if (!userCheck) {
-            return { error: 'User not found' };
-        }
+        if (!userCheck)  return { error: 'User not found' };
 
+        if (!userCheck.isActive) return {error: 'This account is deactivated. Kindly contact your system administrator for futher information'} 
+        
         const passwordMatch = await bcrypt.compare(password, userCheck.password);
-        if (!passwordMatch) {
-            return { error: 'Wrong password' };
-        }
+
+        if (!passwordMatch) return { error: 'Wrong password' };
+    
 
         const accessToken = generateAccessToken(userCheck);
         const refreshToken = generateRefreshToken(userCheck);
