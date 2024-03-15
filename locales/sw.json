@@ -1,0 +1,9 @@
+{
+    "account_deactivated": "Akaunti hii imezimwa. Tafadhali wasiliana na msimamizi wako wa mfumo kwa maelezo zaidi",
+    "server_error": "Hitilafu ya kimfumo imetokea",
+    "login_success": "umefanikiwa kuingia",
+    "logout_success": "umefanikiwa kutoka",
+    "user_not_found": "Akaunti hii haipo",
+    "validation_error": "Kosa la Uthibitishaji",
+    "wrong_password": "umekosea Nywila"
+}

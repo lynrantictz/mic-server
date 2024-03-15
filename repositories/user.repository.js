@@ -1,6 +1,7 @@
 const { User, UserType, Role, Permission } = require('../models');
 const bcrypt = require('bcryptjs');
 const { generateAccessToken, generateRefreshToken } = require('../services/auth.service');
+const { t } = require('i18next');
 
 /**
  * Get Authenticated User with all required attributes
@@ -63,13 +64,13 @@ const authenticate = async (code, password) => {
     try {
         const userCheck = await findByCode(code)
         
-        if (!userCheck)  return { error: 'User not found' };
+        if (!userCheck)  return { error: t('user_not_found') };
 
-        if (!userCheck.isActive) return {error: 'This account is deactivated. Kindly contact your system administrator for futher information'} 
-        
+        if (!userCheck.isActive) return {error: t('account_deactivated')} 
+
         const passwordMatch = await bcrypt.compare(password, userCheck.password);
 
-        if (!passwordMatch) return { error: 'Wrong password' };
+        if (!passwordMatch) return { error: t('wrong_password') };
     
 
         const accessToken = generateAccessToken(userCheck);

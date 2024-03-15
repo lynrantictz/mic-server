@@ -1,4 +1,5 @@
 const { status } = require("express/lib/response");
+const { t } = require("i18next");
 const userRepository = require('../../repositories/user.repository')
 
 const login = async (req, res) => {
@@ -6,12 +7,12 @@ const login = async (req, res) => {
     try {
         const authResult = await userRepository.authenticate(code, password);
         if (authResult.error) {
-            return res.status(401).json(formatErrorResponse('Validation Error',authResult.error));
+            return res.status(401).json(formatErrorResponse(t('validation_error'),authResult.error));
         }
-        res.json(formatResponse(true, 'Login Successfully', authResult));
+        res.json(formatResponse(true, t('login_success'), authResult));
     } catch (error) {
 
-        const errorMessage = 'Internal server error';
+        const errorMessage = t('server_error');
         const fullErrorMessage = `${errorMessage}: ${error.message}`;
         console.error(fullErrorMessage);
         res.status(500).json(formatErrorResponse(errorMessage, fullErrorMessage));

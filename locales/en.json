@@ -1,0 +1,9 @@
+{
+    "account_deactivated": "This account is deactivated. Kindly contact your system administrator for futher information",
+    "server_error": "Internal server error",
+    "login_success": "Login Successfully",
+    "logout_success": "Logout successfully",
+    "user_not_found": "User not found",
+    "validation_error": "Validation Error",
+    "wrong_password": "Wrong password"
+}
