@@ -64,15 +64,16 @@ const authenticate = async (code, password) => {
     try {
         const userCheck = await findByCode(code)
         
-        if (!userCheck)  return { error: t('user_not_found') };
+        if (!userCheck)  
+        return { error: t('user_not_found') };
 
-        if (!userCheck.isActive) return {error: t('account_deactivated')} 
+        if (!userCheck.isActive) 
+        return {error: t('account_deactivated')} 
 
         const passwordMatch = await bcrypt.compare(password, userCheck.password);
 
         if (!passwordMatch) return { error: t('wrong_password') };
     
-
         const accessToken = generateAccessToken(userCheck);
         const refreshToken = generateRefreshToken(userCheck);
 
