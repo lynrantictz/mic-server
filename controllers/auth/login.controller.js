@@ -10,7 +10,7 @@ const login = async (req, res) => {
         return res.status(401).json(formatErrorResponse(t('validation_error'),authResult.error));
         res.json(formatResponse(true, t('login_success'), authResult));
     } catch (error) {
-
+        const errorMessage = 'An error occurred';
         const fullErrorMessage = `${errorMessage}: ${error.message}`;
         res.status(500).json(formatErrorResponse(t('server_error'), fullErrorMessage));
     }

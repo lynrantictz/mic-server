@@ -1,4 +1,4 @@
-const { User, UserType, Role, Permission } = require('../models');
+const { User, UserType, Role, Permission, ResourceUser } = require('../models');
 const bcrypt = require('bcryptjs');
 const { generateAccessToken, generateRefreshToken } = require('../services/auth.service');
 const { t } = require('i18next');
@@ -30,6 +30,10 @@ const getAuthUser = async (id) => {
                      as: 'permissions',
                      attributes: ['name'],
                      through: { attributes: [] }
+                },
+                { 
+                    model: ResourceUser,
+                    as: 'resource'
                 }
             ]
         });

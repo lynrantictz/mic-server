@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsTo(models.UserType, { foreignKey: 'userTypeId', as: 'userType' })
       User.belongsToMany(models.Role, { through: models.UserRole, foreignKey: 'userId',otherKey: 'roleId', as: 'roles' });
       User.belongsToMany(models.Permission, { through: models.PermissionUser, foreignKey: 'userId',otherKey: 'permissionId', as: 'permissions' });
+      User.hasOne(models.ResourceUser, { foreignKey: 'userId', as: 'resource' })
     }
   }
   User.init({
