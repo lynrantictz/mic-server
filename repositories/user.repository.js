@@ -1,7 +1,18 @@
-const { User, UserType, Role, Permission, ResourceUser } = require('../models');
+const { 
+    User, 
+    UserType, 
+    Role, 
+    Permission, 
+    ResourceUser, 
+    ResourceTitle, 
+    ResourceQualification, 
+    Insurer, 
+    Country  
+} = require('../models');
 const bcrypt = require('bcryptjs');
 const { generateAccessToken, generateRefreshToken } = require('../services/auth.service');
 const { t } = require('i18next');
+
 
 /**
  * Get Authenticated User with all required attributes
@@ -11,7 +22,7 @@ const { t } = require('i18next');
 const getAuthUser = async (id) => {
     try {
         return await User.findOne({
-            attributes: ['code', 'userName','isActive'],
+            attributes: ['uuid','code', 'userName','isActive'],
             where: { id: id },
             include: [
                 { 
@@ -33,10 +44,23 @@ const getAuthUser = async (id) => {
                 },
                 { 
                     model: ResourceUser,
-                    as: 'resource'
-                }
+                    as: 'resource',
+                    // attributes: ['resourceType'],
+                    include: [
+                        {
+                            model: ResourceTitle,
+                            as: 'title',
+                            attributes: ['name']
+                        },
+                        {
+                            model: ResourceQualification,
+                            as: 'qualification',
+                            attributes: ['name']
+                        },
+                    ]
+                },
             ]
-        });
+        })
     } catch (error) {
         throw new Error(`Error fetching user: ${error}`);
     }
@@ -57,6 +81,7 @@ const findByCode = async (code) => {
         throw new Error(`Error fetching users: ${error}`);
     }
 };
+
 
 /**
  * User Authentication
@@ -83,7 +108,25 @@ const authenticate = async (code, password) => {
 
         const user = await getAuthUser(userCheck.id)
 
-        return { user, accessToken, refreshToken };
+        let resource 
+
+        switch(user.resource.resourceType) {
+            case 'insurer':
+                // resource = await Insurer.findByPk(user.resource.resourceId)
+
+                resource = await Insurer.findOne({
+                    where: { id:  user.resource.resourceId },
+                    include: [
+                        {
+                            model: Country,
+                            as: 'country'
+                        }
+                    ]
+                })
+            break
+        }
+
+        return { user, [user.resource.resourceType]:resource, accessToken, refreshToken };
     } catch (error) {
         throw new Error(`Error authenticating user: ${error}`);
     }

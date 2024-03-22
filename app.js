@@ -4,7 +4,7 @@ const cors = require( "cors" );
 const api = require('./routes/api');
 const i18nextMiddleware = require('./middleware/i18n.middleware');
 require('dotenv').config()
-require('./utils/formatResponse');
+require('./utils/utils');
 
 
 const app = express()

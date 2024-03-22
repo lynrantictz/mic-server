@@ -13,5 +13,8 @@ const formatErrorResponse = (message, errors) => {
     }
 }
 
+const uppercaseFirst = str => `${str[0].toUpperCase()}${str.substr(1)}`
+
 global.formatResponse = formatResponse
 global.formatErrorResponse = formatErrorResponse
+global.uppercaseFirst = uppercaseFirst
