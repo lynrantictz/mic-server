@@ -17,9 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static associate(models) {
-      ResourceUser.belongsTo(models.User, { foreignKey: 'userId', as: 'User' })
-      ResourceUser.belongsTo(models.ResourceTitle, { foreignKey: 'resourceTitleId', as: 'title' })
-      ResourceUser.belongsTo(models.ResourceQualification, { foreignKey: 'resourceQualificationId', as: 'qualification' })
+      ResourceUser.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' })
+      ResourceUser.belongsTo(models.ResourceTitle, { foreignKey: 'resource_title_id', as: 'title' })
+      ResourceUser.belongsTo(models.ResourceQualification, { foreignKey: 'resource_qualification_id', as: 'qualification' })
     }
 
 

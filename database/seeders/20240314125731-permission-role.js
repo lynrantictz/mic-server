@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-     await queryInterface.bulkInsert('PermissionRoles', [
+     await queryInterface.bulkInsert('permission_roles', [
        {
         id: 1,
         permissionId: 1,
@@ -235,6 +235,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('PermissionRoles', null, {});
+    await queryInterface.bulkDelete('permission_roles', null, {});
   }
 };

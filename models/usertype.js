@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'UserType',
+    tableName: 'user_types'
 
     // getterMethods: {
     //   createdAt() {
