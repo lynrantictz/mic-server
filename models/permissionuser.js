@@ -14,14 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   PermissionUser.init({
-    permissionId: {
+    permission_id: {
       type: DataTypes.STRING,
       references: {
         model: 'Permission',
         key: 'id'
       }
     },
-    userId: {
+    user_id: {
       type: DataTypes.STRING,
       references: {
         model: 'User',

@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   User.init({
     userName: DataTypes.STRING,
-    userTypeId: {
+    user_type_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'UserTypes',
+        model: 'user_types',
         key: 'id'
       }
     },

@@ -14,14 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   PermissionRole.init({
-    roleId: {
+    role_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Role',
         key: 'id'
       }
     },
-    permissionId: {
+    permission_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Permission',

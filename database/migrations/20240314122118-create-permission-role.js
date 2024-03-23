@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      permissionId: {
+      permission_id: {
         type: Sequelize.BIGINT,
         allowNull: false,
         references: {
@@ -17,7 +17,7 @@ module.exports = {
           key: 'id',
         }
       },
-      roleId: {
+      role_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {

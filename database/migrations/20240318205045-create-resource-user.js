@@ -9,20 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      user_id: {
         type: Sequelize.INTEGER,
         references: {
           model: 'users',
           key: 'id'
         }
       },
-      resourceId: {
+      resource_id: {
         type: Sequelize.INTEGER,
       },
-      resourceType: {
+      resource_type: {
         type: Sequelize.STRING,
       },
-      resourceTitleId: {
+      resource_title_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
@@ -30,7 +30,7 @@ module.exports = {
           key: 'id'
         }
       },
-      resourceQualificationId: {
+      resource_qualification_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
@@ -38,7 +38,7 @@ module.exports = {
           key: 'id'
         }
       },
-      registrationNo: {
+      registration_no: {
         type: Sequelize.STRING,
         allowNull:true,
       },

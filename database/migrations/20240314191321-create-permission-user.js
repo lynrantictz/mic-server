@@ -9,14 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      permissionId: {
+      permission_id: {
         type: Sequelize.INTEGER,
         references: {
           model: 'permissions',
           key: 'id'
         }
       },
-      userId: {
+      user_id: {
         type: Sequelize.INTEGER,
         references: {
           model: 'users',

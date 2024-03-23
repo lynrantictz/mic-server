@@ -32,16 +32,16 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    resourceId: DataTypes.INTEGER,
-    resourceType: DataTypes.STRING,
-    resourceTitleId: {
+    resource_id: DataTypes.INTEGER,
+    resource_type: DataTypes.STRING,
+    resource_title_id: {
       type: DataTypes.STRING,
       references: {
         model: 'ResourceTitle',
         key: 'id'
       }
     },
-    resourceQualificationId: {
+    resource_qualification_id: {
       type: DataTypes.STRING,
       references: {
         model: 'ResourceQualification',
@@ -53,22 +53,22 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'ResourceUser',
   });
 
-  ResourceUser.addHook("afterFind", findResult => {
-    if (!Array.isArray(findResult)) findResult = [findResult];
-    for (const instance of findResult) {
-      if (instance.resourceType === "insurer" && instance.insurer !== undefined) {
-        instance.resource = instance.insurer;
-      } 
-      else if (instance.commentableType === "user" && instance.user !== undefined) {
-        instance.resource = instance.user;
-      }
-      // To prevent mistakes:
-      delete instance.insurer;
-      delete instance.dataValues.insurer;
-      delete instance.user;
-      delete instance.dataValues.user;
-    }
-  })
+  // ResourceUser.addHook("afterFind", findResult => {
+  //   if (!Array.isArray(findResult)) findResult = [findResult];
+  //   for (const instance of findResult) {
+  //     if (instance.resourceType === "insurer" && instance.insurer !== undefined) {
+  //       instance.resource = instance.insurer;
+  //     } 
+  //     else if (instance.commentableType === "user" && instance.user !== undefined) {
+  //       instance.resource = instance.user;
+  //     }
+  //     // To prevent mistakes:
+  //     delete instance.insurer;
+  //     delete instance.dataValues.insurer;
+  //     delete instance.user;
+  //     delete instance.dataValues.user;
+  //   }
+  // })
 
 
   return ResourceUser;
