@@ -112,8 +112,6 @@ const authenticate = async (code, password) => {
 
         switch(user.resource.resourceType) {
             case 'insurer':
-                // resource = await Insurer.findByPk(user.resource.resourceId)
-
                 resource = await Insurer.findOne({
                     where: { id:  user.resource.resourceId },
                     include: [
