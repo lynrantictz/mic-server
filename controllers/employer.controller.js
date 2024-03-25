@@ -10,7 +10,7 @@ const register = async (req, res) => {
         if (registerResult.error) 
         return res.status(401).json(formatErrorResponse(t('validation_error'),registerResult.error));
         res.json(formatResponse(true, t('employeer_registered'), registerResult));
-    } catch (error) {
+    } catch (error) { 
         const errorMessage = 'An error occurred';
         const fullErrorMessage = `${errorMessage}: ${error.message}`;
         res.status(500).json(formatErrorResponse(t('server_error'), fullErrorMessage));
