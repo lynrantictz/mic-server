@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Employer extends Model {
     /**
@@ -16,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Employer.init({
+    tin: DataTypes.STRING,
+    user_id: DataTypes.INTEGER,
+    employer_type_id: DataTypes.INTEGER,
     name: {
       type: DataTypes.STRING
     },
@@ -32,7 +36,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Employer',
-    tableName: 'employers'
+    tableName: 'employers',
+    hooks: {
+      // beforeCreate : (record, options) => {
+      //   const authenticatedUser = req.user.UserId
+      //   record.user_id = authenticatedUser
+      // }
+    }
   });
   return Employer;
 };
