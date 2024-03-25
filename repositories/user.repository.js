@@ -109,11 +109,11 @@ const authenticate = async (code, password) => {
         const user = await getAuthUser(userCheck.id)
 
         let resource 
-
-        switch(user.resource.resourceType) {
+        
+        switch(user.resource.resource_type) {
             case 'insurer':
                 resource = await Insurer.findOne({
-                    where: { id:  user.resource.resourceId },
+                    where: { id:  user.resource.resource_id },
                     include: [
                         {
                             model: Country,
@@ -124,7 +124,7 @@ const authenticate = async (code, password) => {
             break
         }
 
-        return { user, [user.resource.resourceType]:resource, accessToken, refreshToken };
+        return { user, [user.resource.resource_type]:resource, accessToken, refreshToken };
     } catch (error) {
         throw new Error(`Error authenticating user: ${error}`);
     }

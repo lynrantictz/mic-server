@@ -1,0 +1,14 @@
+### Login
+POST http://localhost:3000/api/v1/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "code": "STG-1",
+    "password": "123"
+}
+
+###Logout
+POST http://localhost:3000/api/v1/logout HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJOYW1lIjoiSGFtaXMgSGFtaXMiLCJpYXQiOjE3MTEzOTU2NTEsImV4cCI6MTcxMTM5OTI1MX0.oQ2TLio9i_H59PE3_GY4eW12Be1TVMifotXrbIwNRxc
+

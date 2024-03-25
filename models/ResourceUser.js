@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }
   ResourceUser.init({
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'User',
@@ -51,6 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'ResourceUser',
+    tableName: 'resource_users'
   });
 
   // ResourceUser.addHook("afterFind", findResult => {

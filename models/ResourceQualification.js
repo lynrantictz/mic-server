@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'ResourceQualification',
-    tableName: 'Resource_qualifications'
+    tableName: 'resource_qualifications'
   });
   return ResourceQualification;
 };
