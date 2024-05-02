@@ -10,12 +10,12 @@ Content-Type: application/json
 ###Logout
 POST http://localhost:3000/api/v1/logout HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJOYW1lIjoiSGFtaXMgSGFtaXMiLCJpYXQiOjE3MTEzOTg1OTYsImV4cCI6MTcxMTQwMjE5Nn0.rUAjZHhEulTE5zRuCJ7H5JgpYkpRGH2sEqdnpY_ZCDs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJOYW1lIjoiSGFtaXMgSGFtaXMiLCJpYXQiOjE3MTQ2ODM4MTcsImV4cCI6MTcxNDY4NzQxN30.8EV5BpzaE9w_7to8grrtwn49-h0dOT99zV9n8wO7nnA
 
-###Register Employee
+###Register Employeer
 POST http://localhost:3000/api/v1/employees/register HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJOYW1lIjoiSGFtaXMgSGFtaXMiLCJpYXQiOjE3MTE0MDI1MTcsImV4cCI6MTcxMTQwNjExN30.EWTVSKVZYVItVm2oe4JzBtZPpvSe-iv_3lhKgWX4zEI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJOYW1lIjoiSGFtaXMgSGFtaXMiLCJpYXQiOjE3MTQ2ODM4MTcsImV4cCI6MTcxNDY4NzQxN30.8EV5BpzaE9w_7to8grrtwn49-h0dOT99zV9n8wO7nnA
 
 {
     "employer_type_id": 2,
@@ -25,3 +25,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZ
     "address": "Plot #802, Mwai Kibaki Road, Mikocheni Dar es Salaam",
     "phone": "255 22 277 1623"
 }
+
+###Register Employee
+PUT http://localhost:3000/api/v1/employees/70c6f4a5-d3e8-45ac-9747-0b4463e233cb/update HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJOYW1lIjoiSGFtaXMgSGFtaXMiLCJpYXQiOjE3MTE0ODQ3MzksImV4cCI6MTcxMTQ4ODMzOX0.yy_WLqcdjz6p4O433aDXwSVV-oy_M3ptNRPXeJuzkSU

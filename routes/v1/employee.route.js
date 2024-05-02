@@ -5,5 +5,6 @@ var app = express();
 var router = express.Router();
 
 router.post('/register', employeeValidationHandler, employeeController.register)
+router.put('/:uuid/update', employeeController.updateStatus)
 
 module.exports = router

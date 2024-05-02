@@ -1,3 +1,4 @@
+const res = require('express/lib/response');
 const { Employer, sequelize } = require('../models');
 
 const getAll = async () => {
@@ -10,7 +11,7 @@ const getAll = async () => {
 
 const register = async (inputs) => {
     try {
-         const employee = await sequelize.transaction (async (t) => {
+         const employer = await sequelize.transaction (async (t) => {
             return await Employer.create({
                 user_id: inputs.user_id,
                 employer_type_id: inputs.employer_type_id,
@@ -21,10 +22,29 @@ const register = async (inputs) => {
                 phone: inputs.phone,
             }, { transaction: t })
         });
-        return {employee}
+        return {employer}
     } catch (error){
         console.log(error)
     }
 }
 
-module.exports = { register };
+const updateStatus = async (uuid) => {
+    try {
+        return {uuid}
+        // const employerQuery = await Employer.find({
+        //     where:{ uuid: uuid }
+        // })
+        // if (!employerQuery) return { error: t('employeer_not_found') };
+        // res.send(employerQuery)
+        // const employer = await sequelize.transaction (async (t) => {
+        //     // return await employerQuery.update({
+        //     //     isActive: employerQuery.isActive == true ? false : true
+        //     // },{ transaction: t })
+        // })
+        // return {employer};
+    } catch (error) {
+        
+    }
+}
+
+module.exports = { register, updateStatus };

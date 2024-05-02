@@ -1,10 +1,12 @@
 {
     "account_deactivated": "This account is deactivated. Kindly contact your system administrator for futher information",
-    "server_error": "Internal server error",
+    "employeer_not_found": "Employeer not found",
+    "employeer_registered": "Employeer Registered Successfully",
     "login_success": "Login Successfully",
     "logout_success": "Logout successfully",
+    "server_error": "Internal server error",
+    "status_update": "Status updated successfully",
     "user_not_found": "User not found",
     "validation_error": "Validation Error",
-    "wrong_password": "Wrong password",
-    "employeer_registered": "Employeer Registered Successfully"
+    "wrong_password": "Wrong password"
 }
